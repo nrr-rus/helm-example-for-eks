@@ -14,4 +14,10 @@ resource "helm_release" "nginx" {
   name       = "nginx"
   repository = "https://nrr-rus.github.io/artifact-nginx/"
   chart      = "Helm-nginx"
+
+  set {
+    name  = "replicaCount"
+    value = "1"
+  }
+
 }
