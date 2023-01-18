@@ -12,6 +12,6 @@ provider "helm" {
 
 resource "helm_release" "nginx" {
   name       = "nginx"
-  repository = "https://charts.bitnami.com/bitnami"
-  chart      = "nginx"
+  repository = "https://nrr-rus.github.io/artifact-nginx/"
+  chart      = "Helm-nginx"
 }
