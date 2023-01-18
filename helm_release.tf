@@ -10,17 +10,8 @@ provider "helm" {
   }
 }
 
-resource "helm_release" "kubewatch" {
-  name       = "kubewatch"
+resource "helm_release" "nginx" {
+  name       = "nginx"
   repository = "https://charts.bitnami.com/bitnami"
-  chart      = "kubewatch"
-
-  values = [
-    file("${path.module}/kubewatch-values.yaml")
-  ]
-
-  set_sensitive {
-    name  = "slack.token"
-    value = var.slack_app_token
-  }
+  chart      = "nginx"
 }
